@@ -8,7 +8,7 @@ body,input,button,a{
 }
 body{
     display:grid;
-    grid-template-rows: 60px 1fr 60px;
+    grid-template-rows: 60px 1fr auto;
     grid-template-columns: 1fr;
 }
 header{
@@ -58,7 +58,7 @@ header a,header div{
     grid-template-rows: auto auto 1fr;
     grid-template-areas: 
     "logo"
-    "search-bar"
+    "search"
     "small-footer";
     align-items: start;
 }
@@ -73,40 +73,57 @@ header a,header div{
     max-width: 100%;
     max-height: 100%;
 }
-.search-bar{
-    grid-area: search-bar;
+.searchdiv{
+    grid-area: search;
     display:grid;
-    background-color: white;
     padding:10px;
 }
-.search-bar input{
-    width: 500px;
-    height: 35px;
+.search-bar{
     justify-self: center;
-    border-radius: 10px;
-    border:1px solid rgb(197,194,194);
-    padding-left: 15px;
+    margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    height: 46px;
+    width: 100%;
+    max-width: 584px;
+    border-radius: 25px;
+    border:1px solid rgb(197, 194, 194);
 }
-.search-bar input:hover{
+.search-bar:hover{  
     -webkit-box-shadow: 0 0 10px rgb(197, 194, 194);
             box-shadow: 0 0 10px rgb(197, 194, 194);
 }
+.search-bar input{
+    border:none;
+}
 .search-bar input:focus{
     outline: none;
+}
+.search-bar img{
+    align-self: center;
+}
+img[src="images/mic.png"]{
+    padding-right: 10px;
+}
+img[src="images/search.png"]{
+    padding-left: 10px;
 }
 .search-button{
     margin:10px;
     justify-self: center;
 }
+.gs{
+    margin-right: 10px;
+}
 .search-button button{
-    padding: 10px;
-    font-size: 18px;
+    height: 32px;
     color: rgb(61, 59, 59);
-    border:none;
+    background-color: transparent;
+    border:1px solid transparent;
     border-radius: 4px;
 }
 .search-button button:hover{
-    padding: 9px;
+    height: 31px;
     border: 1px solid rgb(187, 185, 185);  
     -webkit-box-shadow: 0 0 10px rgb(197, 194, 194);
             box-shadow: 0 0 10px rgb(197, 194, 194);
@@ -115,31 +132,40 @@ header a,header div{
     margin: 10px;
     grid-area: small-footer;
     justify-self: center;
+    font-size: 12px;
+}
+.small-footer a{
+    text-decoration: none;
+    font-size: inherit;
+}
+.small-footer a:visited{
+    color:#00f;
+}
+.small-footer a:hover{
+    text-decoration: underline;
 }
 footer{
     padding:5px;
     grid-column: 1/4;
     grid-row: 3/4;
     display:grid;
-    grid-template-columns: repeat(2,auto);
+    grid-template-columns: auto 1fr auto;
+    border:1px solid rgba(197, 194, 194, .50)
 }
 .right{
-    justify-self: end;
+    min-width: 195px;
     display:grid;
     grid-template-columns: repeat(3,auto);
 }
 .left{
-    justify-self: start;
+    min-width: 360px;
     display:grid;
     grid-template-columns: repeat(4,auto);
 }
-footer div a{
-    display: grid;
-    align-content: center;
-    justify-content: center;
+footer a{
     text-decoration: none;
-    margin:10px;
-    color:#70757a;
+    padding:10px;
+    color: #70757a;
 }
 footer div a:hover{
     text-decoration: underline;
