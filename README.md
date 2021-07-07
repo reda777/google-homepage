@@ -1,1 +1,1 @@
-this is a simple odin project of rebuilding an existing  web page using html and css
+this is a simple odin project of rebuilding google home page using html and css(grid only)
