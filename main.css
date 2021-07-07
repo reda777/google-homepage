@@ -68,6 +68,7 @@ header a,header div{
     height: 92px;
     justify-self: center;
     margin:10px;
+    image-rendering: -webkit-optimize-contrast;
 }
 .logo img{
     max-width: 100%;
